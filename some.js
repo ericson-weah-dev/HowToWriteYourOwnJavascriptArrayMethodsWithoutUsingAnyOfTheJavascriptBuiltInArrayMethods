@@ -22,6 +22,9 @@ const some = (array = [], fn = () => {}) => {
 }
 
 
+
+// Usage
+
 const array = [1, 3, 5, 7];
 
 const isEven = some(array, (element, index, array) => {

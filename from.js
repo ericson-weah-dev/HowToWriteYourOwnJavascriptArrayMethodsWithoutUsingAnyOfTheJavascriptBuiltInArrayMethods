@@ -28,7 +28,9 @@ function from(iterable,mapFn,thisArg, result = []) {
   }
 
 
-  const mySet = new Set(['apple', 'banana', 'cherry']);
+// Usage
+
+const mySet = new Set(['apple', 'banana', 'cherry']);
 
 const array = from(mySet);
 

@@ -21,6 +21,8 @@ const keys = (array = [], nextIndex = 0) => {
     };
 }
 
+// Usage
+
 const array = ['apple', 'banana', 'cherry'];
 
 

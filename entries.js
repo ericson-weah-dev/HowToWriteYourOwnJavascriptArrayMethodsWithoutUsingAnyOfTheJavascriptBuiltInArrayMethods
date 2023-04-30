@@ -19,6 +19,9 @@ const entries = (array = [], result = []) => {
     return result;
 }
 
+
+// Usage
+
 const array = ['apple', 'banana', 'cherry'];
 
   const arrayEntries = entries(array);

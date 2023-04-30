@@ -59,7 +59,10 @@ const splice = (array = [], start = 0, deleteCount = 0, ...items) => {
     return deletedItems;
   }
 
-  const array = [1, 2, 3, 4, 5];
+
+  // Usage
+  
+const array = [1, 2, 3, 4, 5];
 const removedItems = splice(array, 2, 2, 'a', 'b');
 console.log(array); // [1, 2, 'a', 'b', 5]
 console.log(removedItems); // [3, 4]

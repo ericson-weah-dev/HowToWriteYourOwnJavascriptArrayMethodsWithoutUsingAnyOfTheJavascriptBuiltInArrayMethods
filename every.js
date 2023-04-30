@@ -22,6 +22,8 @@ const every = (array = [], fn = () => {}) => {
 }
 
 
+// Usage
+
 const array = [2, 4, 6, 8];
 
 const isEven = every(array, (element, index, array) => {

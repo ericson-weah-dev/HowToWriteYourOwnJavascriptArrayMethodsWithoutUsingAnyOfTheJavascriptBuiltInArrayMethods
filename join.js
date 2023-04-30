@@ -26,6 +26,8 @@ const join = (array = [], separator = ' ', len = length(array), result =  '') =>
 
 
 
+// Usage
+
 const array = ['apple', 'banana', 'cherry'];
 
 const result1 = join(array);

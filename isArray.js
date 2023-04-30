@@ -11,6 +11,9 @@
 */
 const isArray = (input = []) => Object.prototype.toString.call(input) === '[object Array]';
 
+
+// Usage
+
 const myArray = [1, 2, 3, 4];
 const notAnArray = 'This is not an array';
 

@@ -26,6 +26,7 @@ const concat = (...args) => {
     return result;
 }
 
+// Usage
 
 const array1 = [1, 2, 3];
 const array2 = [4, 5, 6];

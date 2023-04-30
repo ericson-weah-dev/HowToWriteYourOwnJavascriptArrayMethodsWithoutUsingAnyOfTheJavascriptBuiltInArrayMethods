@@ -22,6 +22,8 @@ const fill = (array = [], value = 0, start = 0, end = length(array)) => {
     return array;
 }
 
+// Usage
+
 
 const aray = [1, 2, 3, 4, 5];
 

@@ -27,6 +27,9 @@ const lastIndexOf = (array = [], searchElement, fromIndex, len = length(array)) 
     return -1;
 }
 
+
+// Usage
+
 const array = [1, 2, 3, 4, 5];
 
 const index1 = lastIndexOf(array,3);

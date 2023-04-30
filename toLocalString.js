@@ -27,7 +27,10 @@ const toLocalString = (array = [], len = length(array), stringArray = [], separa
     return join(stringArray, separator + ' ');
   }
 
-  const numbers = [12345.67, 8910.11, 123.45];
+
+
+  // Usage
+const numbers = [12345.67, 8910.11, 123.45];
 const formattedNumbers = toLocaleString(numbers, 'en-US', { style: 'currency', currency: 'USD' });
 console.log(formattedNumbers); // "$12,345.67, $8,910.11, $123.45"
 

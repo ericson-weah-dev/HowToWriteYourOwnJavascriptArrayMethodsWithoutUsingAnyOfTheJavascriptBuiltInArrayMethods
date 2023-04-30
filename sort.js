@@ -53,7 +53,8 @@ const  sort = (array = [], fn = () => {})  => {
     return array;
   }
 
-  // Example usage:
+
+// Example usage:
 const unsorted = [3, 2, 1, 4, 5];
 const sorted = sort(unsorted, (a, b) => a - b);
 console.log(sorted); // [1, 2, 3, 4, 5]

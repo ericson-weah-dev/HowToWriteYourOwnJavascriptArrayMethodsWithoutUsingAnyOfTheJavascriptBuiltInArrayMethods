@@ -20,17 +20,19 @@ const findIndex = (array = [], fn = () => {}) => {
     return -1;
 }
 
+
+// Usage
 const array = [
     { name: 'Alice', age: 25 },
     { name: 'Bob', age: 30 },
     { name: 'Charlie', age: 35 },
   ];
   
-  const index = findIndex(array, (person, index, array) => {
-    return person.age > 30;
-  });
+const index = findIndex(array, (person, index, array) => {
+  return person.age > 30;
+});
   
-  console.log(index); // Output: 2
+console.log(index); // Output: 2
 
 
 //   const array = [2, 4, 6, 8];

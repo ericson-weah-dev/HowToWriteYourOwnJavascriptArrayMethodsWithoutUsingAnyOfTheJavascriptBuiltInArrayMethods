@@ -23,7 +23,9 @@ const map = (array = [], fn = () => {}, result = []) => {
  }
 
 
- const array = [1, 2, 3, 4];
+ // Usage
+ 
+const array = [1, 2, 3, 4];
 
 const transformedArray = map(array,(element, index, array) => {
   return element * 2;

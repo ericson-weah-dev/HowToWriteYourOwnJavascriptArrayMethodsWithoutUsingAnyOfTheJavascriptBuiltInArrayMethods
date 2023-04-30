@@ -20,6 +20,9 @@ const demethodizeConstruct = (Source = {}, fn = () => {}, Destination =  {}) => 
     return Destination;
 }
 
+
+// Usage
+
 const arrayFns = demethodizeConstruct(Array, demethodize);
 
 

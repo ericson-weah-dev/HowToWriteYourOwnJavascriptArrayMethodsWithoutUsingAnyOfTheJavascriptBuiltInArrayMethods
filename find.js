@@ -20,6 +20,9 @@ const find = (array = [], fn = () => {}) => {
     return undefined;
 }
 
+
+// Usage
+
 const array = [2, 4, 6, 8];
 
 const element = find(array, (element, index, array) => {

@@ -23,6 +23,8 @@ const includes = (array = [], searchElement = '', fromIndex = 0, len = length(ar
     return false;
 }
 
+// Usage
+
 const array = [1, 2, 3, 4, 5];
 
 const result1 = includes(array, 3);

@@ -23,7 +23,9 @@ const shift = (array = [], len = length(array), firstElement = array[0]) => {
   }
 
 
-  const array = [1, 2, 3];
+  // Usage
+
+const array = [1, 2, 3];
 const firstElement = shift(array);
 console.log(array); // [2, 3]
 console.log(firstElement); // 1

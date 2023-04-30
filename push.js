@@ -19,6 +19,8 @@ const push = (array = [], ...elements) => {
     return length(array);
  }
 
+
+ // Usage
 const array = [1, 2, 3];
 const newArray = push(array, 4, 5);
 

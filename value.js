@@ -24,7 +24,9 @@ const values = (array = [], index = 0) => {
     return iterator;
   }
 
-  const fruits = ['apple', 'banana', 'cherry'];
+
+// Usage
+const fruits = ['apple', 'banana', 'cherry'];
 const iterator = values(fruits);
 
 console.log(iterator.next().value); // "apple"

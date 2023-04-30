@@ -17,5 +17,7 @@ const length  = (input = 'something', count = 0) => {
     return count;
  }
 
+
+ // Usage
 const array = [1, 2, 3, 4];
 console.log(length(array)); // Output: 4

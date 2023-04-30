@@ -26,7 +26,9 @@ const slice = (array = [], len = length(array), result = []) => {
   }
 
 
-  const array = [1, 2, 3, 4, 5];
+  // Usage
+  
+const array = [1, 2, 3, 4, 5];
 const slicedArr = slice(array,1, 4);
 console.log(slicedArr); // [2, 3, 4]
 

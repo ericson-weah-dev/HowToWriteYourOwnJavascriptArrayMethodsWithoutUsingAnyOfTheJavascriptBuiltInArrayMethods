@@ -23,7 +23,8 @@ const unshift = (array = []) => {
   }
 
 
-  const array = [1, 2, 3];
+  // Usage
+const array = [1, 2, 3];
 const length = unshift(array, 4, 5);
 
 console.log(array); // [4, 5, 1, 2, 3]

@@ -25,6 +25,8 @@ const reduce = (array = [], fn = () => {}, initialValue = undefined) =>{
     return accumulator;
 }
 
+// Usage
+
 const array = [1, 2, 3, 4];
 
 const sum = reduce(array, (accumulator, currentValue, index, array) => {

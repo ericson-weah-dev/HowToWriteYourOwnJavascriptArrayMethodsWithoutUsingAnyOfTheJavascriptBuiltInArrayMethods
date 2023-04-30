@@ -19,7 +19,9 @@ const forEach = (array = [], fn = () => {}) => {
  }
 
 
- const array = [1, 2, 3, 4];
+ // Usage
+
+const array = [1, 2, 3, 4];
 
 forEach(array, (element, index, array) => {
   console.log(`Element ${index}: ${element}`);

@@ -25,6 +25,9 @@ const reverse = (array = [], len = length(array)) => {
   }
 
 
-  const array = [1, 2, 3];
+
+  // Usage
+  
+const array = [1, 2, 3];
 reverse(array);
 console.log(array); // [3, 2, 1]

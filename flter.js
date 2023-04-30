@@ -22,6 +22,9 @@ const filter = (array = [], fn = () => {}, result = []) =>  {
     return result;
 }
 
+
+// Usage
+
 const array = [1, 2, 3, 4, 5];
 
 const filteredArray = filter(array, (element, index, array) => {

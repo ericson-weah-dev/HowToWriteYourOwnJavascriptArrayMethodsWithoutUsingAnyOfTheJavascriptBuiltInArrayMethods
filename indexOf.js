@@ -24,6 +24,9 @@ const indexOf = (array = [], searchElement = '', fromIndex = 0, len = length(arr
     return -1;
 }
 
+
+// Usage
+
 const array = [1, 2, 3, 4, 5];
 
 const index1 = indexOf(array, 3);
