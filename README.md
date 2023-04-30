@@ -1,10 +1,11 @@
-# Introduction
+# How To Write Your Own Javascript Array Methods Without Using Any Of The Javascript Built-In Array Methods
+## Introduction
 
 As a JavaScript developer, you might be familiar with the built-in array methods like map, filter, reduce, forEach, and others. These methods make it easy to manipulate arrays, but have you ever thought about how they work under the hood? What if you had to write your own array methods without using these built-in methods? In this post, we'll explore how to write your own JavaScript array methods without using the built-in ones.
 
 Before we dive into the implementation, let's first understand what an array method is. In JavaScript, an array method is a function that operates on each element of an array and returns a new array, a scalar value or modifies the original array.
 
-## length
+### length
 
 Now, let's start with the first array function (or method): length. The length function is used to get the number of elements in an array. Here's how you can implement the length the method from scratch:
 
@@ -34,7 +35,7 @@ const array = [1, 2, 3, 4];
 console.log(length(array)); // Output: 4
 ```
 
-## isArray
+### isArray
 
 Next, let's move on to the isArray function (or method). The isArray function is used to determine whether a given value is an array or not. This method returns a boolean value, true if the value is an array, and false otherwise.
 
@@ -75,7 +76,7 @@ console.log(isArray(myObj)); // Output: false
 console.log(isArray(myArray)); // Output: false
 ```
 
-## push
+### push
 
 Next, let's move on to thepush function (or method) In JavaScript, thepush function is used to add one or more elements to the end of an array. Thepush function modifies the original array and returns the new length of the array. It takes one or more arguments, each representing an element to be added to the end of the array.
 
@@ -126,7 +127,7 @@ console.log(array); // Output: [1, 2, 3, [4, 5], {a: 6, b: 7}, () => console.log
 ```
 Overall, the push function is a useful method that allows you to add one or more elements to the end of an array.
 
-## concat
+### concat
 
 Next, let's move on to theconcatfunction (or method). Theconcatfunction is used to merge two or more arrays into a single array. Theconcatfunction does not modify the original arrays, instead, it returns a new array that contains the elements from all of the arrays passed to it as arguments. Theconcatfunction  can take any number of arguments, each representing an array. 
 
@@ -188,7 +189,7 @@ console.log(newArray); // Output: [1, 2, 3, 'h', 'e', 'l', 'l', 'o']
 Overall, the concat function is a useful function that allows you to merge multiple arrays (and non-array values) into a single array.
 
 
-## flat
+### flat
 
 Next, let's move on to theflatfunction. The flat function (or method) is used to flatten an array, which means that it creates a new array with all sub-array elements concatenated into it recursively up to the specified depth. The flat method does not modify the original array but returns a new flattened array.
 
@@ -245,7 +246,7 @@ console.log(flattenedArray); // Output: [1, 2, 4, 5, 7]
 ```
 Overall, the flat function is a useful method that allows you to flatten an array into a new array, recursively concatenating all elements of sub-arrays.
 
-## filter
+### filter
 
 Next, let's move on to the filter function (or method). The filter function is used to create a new array that contains all the elements of the original array that meet a certain condition. The filter function does not modify the original array but returns a new array containing only the elements that pass the condition specified in the callback function.
 
@@ -313,7 +314,7 @@ console.log(filteredArray); // Output: [{ name: 'Charlie', age: 35 }]
 
 Overall, the filter function is a powerful method that allows you to create a new array containing only the elements of the original array that meet a certain condition.
 
-## map
+### map
 
 Next, let's move on to the map function. The map function is used to create a new array with the same length as the original array but with each element transformed based on a provided callback function. The map function does not modify the original array but returns a new array with the transformed elements.
 
@@ -378,7 +379,7 @@ console.log(transformedArray); // Output: [25, 30, 35]
 ```
 Overall, the map function is a powerful function that allows you to create a new array with each element transformed based on a provided callback function.
 
-## forEach
+### forEach
 
 Next, let's move on to the forEach function (or method). The forEach function is used to execute a provided function once for each element in an array. The forEach function does not modify the original array, but it provides an easy way to iterate through an array and perform a certain operation on each element.
 
@@ -424,7 +425,7 @@ The forEach function is particularly useful when you need to perform the same op
 
 Overall, the forEach function is a useful function that allows you to loop through each element in an array and perform a certain operation on each element.
 
-## reduce
+### reduce
 
 Next, let's move on to the reduce function. The reduce function is used to reduce an array to a single value by executing a provided function for each element in the array. The reduce function can be used to perform a variety of operations on an array, such as calculating a sum, finding the maximum value, or concatenating a string.
 
@@ -485,7 +486,7 @@ console.log(sum); // Output: 10
 
 Overall, the reduce function is a powerful method in JavaScript that allows you to reduce an array to a single value by executing a provided function for each element in the array.
 
-## every
+### every
 
 Next, let's move on to the every function. The every function is used to test whether all elements in an array pass a certain condition. The every function returns a boolean value (true or false) indicating whether all elements in the array pass the condition.
 
@@ -548,7 +549,7 @@ console.log(isOverTwenty); // Output: true
 ```
 Overall, the every function is a useful function that allows you to test whether all elements in an array pass a certain condition.
 
-## some
+### some
 
 Next, let's move on to the some function. The somefunction is used to test whether at least one element in an array passes a certain condition. The some function returns a boolean value (true or false) indicating whether at least one element in the array passes the condition.
 
@@ -613,7 +614,7 @@ console.log(isOverThirty); // Output: true
 ```
 Overall, the some function is a useful method in JavaScript that allows you to test whether at least one element in an array passes a certain condition.
 
-## findIndex
+### findIndex
 
 Next, let's move on to the findIndex method. The findIndex function is used to find the index of the first element in an array that passes a certain condition. The findIndex function returns the index of the first element that passes the condition, or -1 if no element passes the condition.
 
@@ -677,7 +678,7 @@ console.log(index); // Output: 2
 Overall, the findIndex function is a useful function that allows you to find the index of the first element in an array that passes a certain condition.
 
 
-## find
+### find
 
 Next, let's move on to the find method. The findfunction is used to find the first element in an array that passes a certain condition. The find method returns the first element that passes the condition, or undefined if no element passes the condition.
 
@@ -741,7 +742,7 @@ console.log(element); // Output: { name: 'Charlie', age: 35 }
 ```
 Overall, the find function is a useful function that allows you to find the first element in an array that passes a certain condition.
 
-## entries
+### entries
 
 Next, let's move on to the entries function. The fentries function is used to return an array iterator object with key-value pairs of the array's entries. Each entry is represented as a two-element array containing the index and the corresponding element value.
 
@@ -796,7 +797,7 @@ Output:
 */
 ```
 
-## fill
+### fill
 
 Next, let's move on to the fill function. The fill  function is used to fill all the elements of an array with a static value. The fill function takes up to four arguments: the input array, the value to fill the array with, the starting index to fill from (optional), and the ending index to fill to (optional).
 
@@ -847,7 +848,7 @@ console.log(Array); // Output: [1, 2, 0, 0, 5]
 ```
 Overall, the fill function is a useful function that allows you to fill all the elements of an array with a static value, with optional starting and ending indices.
 
-## from
+### from
 
 Next, let's move on to the from  function (or method). The from function is used to create a new array from an array-like or iterable object. An array-like object is an object that has a length property and indexed elements but is not necessarily an array (e.g., the arguments object or a NodeList object). An iterable object is an object that can be iterated over using a for...of loop (e.g., an array, a Map object, or a Set object).
 
@@ -897,7 +898,7 @@ console.log(array); // Output: ['apple', 'banana', 'cherry']
 ```
 
 
-## includes
+### includes
 
 Next, let's move on to the includes function. The includes function is used to determine whether an array includes a certain value. The method returns a boolean value (true or false) indicating whether the value was found in the array or not.
 
@@ -957,7 +958,7 @@ console.log(result2); // Output: false
 ```
 Overall, the includes function is a useful function that allows you to determine whether an array includes a certain value, with an optional starting index.
 
-## indexOf
+### indexOf
 
 Next, let's move on to the indexOf function. The indexOf function is used to find the index of the first occurrence of a specified value in an array. If the specified value is not found in the array, the function returns -1.
 
@@ -1016,7 +1017,7 @@ console.log(index2); // Output: -1
 ```
 Overall, the indexOf function is a useful function that allows you to find the index of the first occurrence of a specified value in an array, with an optional starting index.
 
-## join
+### join
 
 Next, let's move on to the join method. The joinfunction is used to create a new string by concatenating all the elements of an array, separated by a specified separator string. If no separator is provided, the default separator is a comma.
 
@@ -1067,7 +1068,7 @@ console.log(result2); // Output: "apple-banana-cherry"
 Overall, the join function is a useful function that allows you to create a new string by concatenating all the elements of an array, separated by a specified separator string.
 
 
-## keys
+### keys
 
 Next, let's move on to the keys method. The keys function is used to create a new array iterator object that contains the keys of an array. The iterator object can be used to loop through the keys of the array using a for...of loop.
 
@@ -1121,7 +1122,7 @@ for (const index of arrayKeys) {
 ```
 Overall, the keys function is a useful function that allows you to create a new array iterator object containing the keys of an array.
 
-## lastIndexOf
+### lastIndexOf
 
 Next, let's move on to the lastIndexOf method. The lastIndexoffunction is used to find the index of the last occurrence of a specified value in an array. If the specified value is not found in the array, the method returns -1.
 
@@ -1185,7 +1186,7 @@ console.log(index2); // Output: -1
 Overall, the lastIndexOf function is a useful function that allows you to find the index of the last occurrence of a specified value in an array, with an optional starting index.
 
 
-## reduceRight
+### reduceRight
 
 Next, let's move on to the reduceRight function (or method). The reduceRightfunction is similar to the reduce function, but it works from right-to-left instead of left-to-right. The function applies a function to each element of an array (starting from the rightmost element) and returns a single value. The reduceRight() function takes two arguments: a callback function and an optional initial value.
 
@@ -1238,7 +1239,7 @@ console.log(result); // Output: 15
 
 Overall, the reduceRight function is a useful function that allows you to apply a function to each element of an array from right-to-left and return a single value.
 
-## reverse
+### reverse
 
 Next, let's move on to the reverse function. The reversefunction is used to reverse the order of the elements in an array. This function modifies the original array in place and returns a reference to the same array.
 
@@ -1288,7 +1289,7 @@ console.log(array); // [3, 2, 1]
 Note that reverse modifies the original array in place, so be careful when using it. 
 
 
-## shift
+### shift
 
 Next, let's move on to the shift function. The shiftfunction is used to remove the first element from an array and return it. This method modifies the original array in place and returns the removed element. If the array is empty, undefined is returned.
 
@@ -1330,7 +1331,7 @@ console.log(firstElement); // 1
 ```
 
 
-## slice
+### slice
 
 Next, let's move on to the slice function. The slicefunction is used to create a shallow copy of a portion of an array into a new array object. The original array is not modified.
 
@@ -1386,7 +1387,7 @@ console.log(array); // [1, 2, 3, {name: 'Jane'}, [4, 5]]
 In this example, the slice function creates a new array called slicedArr that contains a copy of the elements from index 2 to the end of the array array. However, since one of the copied values is an object, both the array and slicedArr arrays contain references to the same object. Therefore, when we modify the object through slicedArr, the change is reflected in array as well.
 
 
-## splice
+### splice
 
 Next, let's move on to the splice function. The splicefunction is used to modify an array by adding, removing, and/or replacing elements. This method modifies the original array in place and returns an array containing the elements that were removed.
 
@@ -1476,7 +1477,7 @@ console.log(removedItems); // [3, 4]
 Note that splice does not create a new array; it modifies the original array in place. So in this example, array and copy are two separate arrays with the same elements.
 
 
-## sort
+### sort
 
 Next, let's move on to the sort function. The sortfunction is used to sort the elements of an array in place and return the sorted array. The sorting is performed based on the Unicode code points of the elements, by default.
 
@@ -1550,7 +1551,7 @@ const sorted = sort(unsorted, (a, b) => a - b);
 console.log(sorted); // [1, 2, 3, 4, 5]
 ```
 
-## toLocalString
+### toLocalString
 
 Next, let's move on to the toLocalString function. The toLocalStringfunction returns a string representing the elements of an array. It converts each element of the array to a string using the toLocaleString method of that element and then concatenates the resulting strings with a comma separator.
 
@@ -1600,7 +1601,7 @@ const formattedNumbers = toLocaleString(numbers, 'en-US', { style: 'currency', c
 console.log(formattedNumbers); // "$12,345.67, $8,910.11, $123.45"
 ```
 
-## values
+### values
 
 Next, let's move on to the values function. The valuesfunction returns a new array iterator object that contains the values of an array. This method does not modify the original array.
 
@@ -1647,7 +1648,7 @@ console.log(iterator.next().value); // "cherry"
 ```
 The values function can be used in combination with other array iterator functions we saw earlier in this post, such as entries and key, to iterate over arrays in different ways.
 
-## unshift
+### unshift
 
 Next, let's move on to the unshift function. The unshiftfunction adds one or more elements to the beginning of an array and returns the new length of the array.
 
@@ -1781,7 +1782,7 @@ console.log(sum)
 
 //Output: 28
 ```
-## Taking Ourdemethodize function a little further.
+### Taking Ourdemethodize function a little further.
 
 You may have noticed that creating functions with our demethodize function can become quite repetitive. For each function we create, we have to use it repeatedly to create all the variations we need. This can quickly become tiresome if we need to create many functions. However, there's a more efficient way to do this. What if we could create a single function that allows us to generate all of the JavaScript built-in array methods, without having to use our function multiple times? This would save us time and make our code more concise. 
 
@@ -1843,7 +1844,7 @@ console.log(sum);
 // //Output: 28
 ```
 
-# Final Thoughts
+## Final Thoughts
 
 Writing your own JavaScript array methods can be a rewarding and educational experience. By understanding the underlying logic and algorithms used in the built-in array methods, you can create your own customized versions that suit your specific needs. Although it may seem daunting at first, with a little bit of practice and experimentation, you'll soon be able to write efficient and effective array methods that can be used in your own projects.
 
