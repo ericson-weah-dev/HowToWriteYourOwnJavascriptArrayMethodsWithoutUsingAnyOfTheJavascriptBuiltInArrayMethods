@@ -39,7 +39,7 @@ describe('from function', () => {
 
   /*
   |-----------------------------------------------------------------------------------------------
-  | Converts an iterable to an array with no map function
+  | Should convert an iterable to an array with no map function
   |-----------------------------------------------------------------------------------------------
   */
   it('It should convert iterable to array with no map function', () => {
@@ -53,7 +53,7 @@ describe('from function', () => {
 
   /*
   |-----------------------------------------------------------------------------------------------
-  | Converts an iterable to an array with a map function.
+  | Should convert an iterable to an array with a map function.
   |-----------------------------------------------------------------------------------------------
   */
   it('It should convert iterable to array with map function', () => {
@@ -69,7 +69,7 @@ describe('from function', () => {
 
   /*
   |-----------------------------------------------------------------------------------------------
-  | Converts an iterable to an array with a map function and thisArg.
+  | Should convert an iterable to an array with a map function and thisArg.
   |-----------------------------------------------------------------------------------------------
   */
   it('It should convert iterable to array with map function and thisArg', () => {
@@ -89,7 +89,7 @@ describe('from function', () => {
 
   /*
   |----------------------------------------------------------------------------------------------
-  | Throws a TypeError for a null input iterable.
+  | Should throw a TypeError for a null input iterable.
   |-----------------------------------------------------------------------------------------------
   */
   it('It should throw TypeError for null iterable', () => {
@@ -101,7 +101,7 @@ describe('from function', () => {
 
   /*
   |-----------------------------------------------------------------------------------------------
-  | Throws a TypeError for an undefined input iterable.
+  | Should throw a TypeError for an undefined input iterable.
   |-----------------------------------------------------------------------------------------------
   */
   it('It should throw TypeError for undefined iterable', () => {
@@ -114,7 +114,7 @@ describe('from function', () => {
 
   /*
   |-----------------------------------------------------------------------------------------------
-  | Throw TypeError for non-iterable.
+  | Should throw TypeError for non-iterable.
   |-----------------------------------------------------------------------------------------------
   */
   it('It should throw TypeError for non-iterable', () => {
