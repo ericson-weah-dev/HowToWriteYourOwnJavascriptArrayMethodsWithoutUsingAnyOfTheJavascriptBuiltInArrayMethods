@@ -242,10 +242,10 @@
     */
 
     exports.every = (array = [], fn = () => { }) => {
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
         for (let i = 0; i < length(array); i++) {
             if (fn(array[i], i, array) === false) return false;
-            if (Object.prototype.toString.call(array[i]) === '[object Array]') every(array[i], fn);
+            //if (Object.prototype.toString.call(array[i]) === '[object Array]') every(array[i], fn);
         }
         return true;
     }

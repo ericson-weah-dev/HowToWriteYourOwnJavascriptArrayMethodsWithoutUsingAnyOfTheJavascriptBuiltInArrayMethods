@@ -1,6 +1,5 @@
 'use strict';
 const length = require('../length');
-const push = require('../push');
 
 /*
 |------------------------------------------------------------------------------------
@@ -14,9 +13,8 @@ const push = require('../push');
 | The function is wrapped in an immediately invoked function expression (IIFE),
 | which allows the module to have its own private scope and prevent any variable conflicts with other code.
 | 
-| The global variable is passed as a parameter to the function.
-
-| In the browser, the global variable refers to the window object, while in Node.js it refers to the global scope.
+| The global variable is passed as a parameter to the function. In the browser,
+| the global variable refers to the window object, while in Node.js it refers to the global scope.
 |
 */
 
@@ -32,25 +30,28 @@ const push = require('../push');
     |
     */
     
-     /**
-       * @name entries
+     
+    /**
+       * @name every
        * @function
        *
-       * @param {Array|Object} array the input array
-       * @param {Array} result the result array
+       * @param {Array|Object} array the array to filter
+       * @param {Function|Object} fn  A function to execute for each element in the array.
+       *   It should return a truthy value to keep the element in the resulting array, and a falsy value otherwise.
        *
-       * @description Finds entries in the given array
+       * @description Check is fn is true for each element
        *
-       * @return {Array} The result array
+       * @return {Boolean} The result
        *
     */
-     const entries = (array = [], result = []) => {
+
+    const every = (array = [], fn = () => { }) => {
         if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
         for (let i = 0; i < length(array); i++) {
-            push(result, [i, array[i]]);
-            //if(Object.prototype.toString.call(array[i]) === '[object Array]') entries(array[i], result);
+            if (fn(array[i], i, array) === false) return false;
+            //if (Object.prototype.toString.call(array[i]) === '[object Array]') every(array[i], fn);
         }
-        return result;
+        return true;
     }
 
 
@@ -61,12 +62,12 @@ const push = require('../push');
     |
     | The module is exported using an if/else statement. If the module object is defined and
     | has an exports property, then the module is being used in Node.js and we export 
-    | the entries object by assigning it to module.exports
+    | the every object by assigning it to module.exports
     |
     |
     */
     
-    if (typeof module !== 'undefined' && module.exports)  module.exports = entries;
+    if (typeof module !== 'undefined' && module.exports)  module.exports = every;
 
     /*
     |----------------------------------------------------------------------------------------
@@ -75,9 +76,9 @@ const push = require('../push');
     |
     | If module is not defined or does not have an exports property, then the module is being used
     | in the browser and we attach the myModule object to the global object (which is the window object
-    | in the browser) by assigning it to global.entries.
+    | in the browser) by assigning it to global.every.
     |
     */
 
-    else global.entries = entries;
+    else global.every = every;
 })(this)
