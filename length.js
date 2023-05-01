@@ -21,3 +21,5 @@ const length  = (input = 'something', count = 0) => {
  // Usage
 const array = [1, 2, 3, 4];
 console.log(length(array)); // Output: 4
+
+module.exports = length

@@ -1,0 +1,26 @@
+{
+  "name": "cjbam",
+  "version": "1.0.0",
+  "description": "As a JavaScript developer, you might be familiar with the built-in array methods like map, filter, reduce, forEach, and others. These methods make it easy to manipulate arrays, but have you ever thought about how they work under the hood? What if you had to write your own array methods without using these built-in methods? In this post, we'll explore how to write your own JavaScript array methods without using the built-in ones.",
+  "main": "concat.js",
+  "directories": {
+    "test": "vite --globals"
+  },
+  "scripts": {
+    "test": "vitest --globals",
+    "coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "Ericson S. Weah <ericson.weah@gmail.com> (https://www.ericsonweah.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "@vue/test-utils": "^2.3.2",
+    "babel-jest": "^29.5.0",
+    "browserify": "^17.0.0",
+    "vite-jest": "^0.1.4",
+    "vue-jest": "^3.0.7"
+  },
+  "devDependencies": {
+    "vitest": "^0.30.1"
+  }
+}

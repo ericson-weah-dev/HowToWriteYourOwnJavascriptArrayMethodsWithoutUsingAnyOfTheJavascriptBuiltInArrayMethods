@@ -7,7 +7,7 @@ Before we dive into the implementation, let's first understand what an array met
 
 ### length
 
-Now, let's start with the first array function (or method): length. The length function is used to get the number of elements in an array. Here's how you can implement the length the method from scratch:
+Now, let's start with the first array function (or method): <span style="color: gray">length</span>. The length function is used to get the number of elements in an array. Here's how you can implement the length the method from scratch:
 
 ```javascript
 /**

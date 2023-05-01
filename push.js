@@ -1,3 +1,7 @@
+const length = require('./functions/length')
+const isArray = require('./functions/isArray')
+
+
 /**
    * @name push
    * @function
@@ -11,8 +15,8 @@
    *
 */
 
-const push = (array = [], ...elements) => {
-    if(!isArray(array)) return array;
+exports.push = (array = [], ...elements) => {
+    if(Object.prototype.toString.call(arg) !== '[object Array]') return array;
     for (let i = 0; i < length(elements); i++) {
       array[length(array)] = elements[i];
     }
@@ -33,3 +37,5 @@ console.log(newArray); // Output: 5
 // push(array, [4, 5], {a: 6, b: 7}, simpleFunction);
 
 // console.log(array); // Output: [1, 2, 3, [4, 5], {a: 6, b: 7}, () => console.log('hello')]
+
+module.exports = push

@@ -1,0 +1,1 @@
+export const user = () => console.log('users')

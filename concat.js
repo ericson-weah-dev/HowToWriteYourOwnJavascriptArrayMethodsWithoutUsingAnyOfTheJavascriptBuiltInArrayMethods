@@ -1,3 +1,7 @@
+const length = require('./functions/length')
+const isArray = require('./functions/isArray')
+const push = require('./functions/push')
+
 /**
    * @name concat
    * @function
@@ -32,7 +36,7 @@ const array1 = [1, 2, 3];
 const array2 = [4, 5, 6];
 const array3 = [7, 8, 9];
 
-const newArray = concat(array1, array2, array3);
+const newArray = concat(array1, array2, array3,[]);
 
 console.log(newArray); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -44,3 +48,5 @@ console.log(newArray); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 // const newArray = concat(array1, string);
 
 // console.log(newArray); // Output: [1, 2, 3, 'h', 'e', 'l', 'l', 'o']
+
+module.exports = concat;

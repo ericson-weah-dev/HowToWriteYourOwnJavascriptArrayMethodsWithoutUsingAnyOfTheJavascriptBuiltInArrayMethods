@@ -26,3 +26,6 @@ console.log(isArray(notAnArray)); // Output: false
 
 // console.log(isArray(myObj)); // Output: false
 // console.log(isArray(myArray)); // Output: false
+
+
+module.exports = isArray
