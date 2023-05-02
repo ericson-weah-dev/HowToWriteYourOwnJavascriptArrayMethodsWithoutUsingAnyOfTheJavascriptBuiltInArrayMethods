@@ -48,7 +48,6 @@ const push = require('../push');
         if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
         for (let i = 0; i < length(array); i++) {
             push(result, [i, array[i]]);
-            //if(Object.prototype.toString.call(array[i]) === '[object Array]') entries(array[i], result);
         }
         return result;
     }

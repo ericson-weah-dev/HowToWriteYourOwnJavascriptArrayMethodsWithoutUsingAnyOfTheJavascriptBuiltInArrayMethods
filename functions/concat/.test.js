@@ -4,7 +4,7 @@ const concat = require('./index');
 
 /*
 |------------------------------------------------------------------------------------
-| SUIT TEST
+| SUITE TEST
 |------------------------------------------------------------------------------------
 |
 | In this test suite, we are testing four different aspects of the concat function:

@@ -8,7 +8,7 @@ const length = require('../length')
 | SUIT TEST
 |------------------------------------------------------------------------------------
 |
-| In this example, we import the test function from Jest, the mount function from @vue/test-utils, and the length and isArray functions from a utils module. We also import the push function from the module we want to test.
+| In this test suite, we are testing five different aspects of the push function:
 
 | We then define five tests using the test function.
 

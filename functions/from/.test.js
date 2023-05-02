@@ -7,7 +7,7 @@ const from = require('./index');
 | SUIT TEST
 |------------------------------------------------------------------------------------
 |
-| In this example, we import the test function from Jest, the mount function from @vue/test-utils, and the length, isArray, push, and from functions from various modules.
+| In this test suite, we are testing fiv different aspects of the from function:
 
 | We then define five tests using the test function. 
 
