@@ -1,6 +1,5 @@
 'use strict';
 const length = require('../length');
-
 /*
 |------------------------------------------------------------------------------------
 | Universal Module Definition (UMD)
@@ -29,26 +28,26 @@ const length = require('../length');
 
     |
     */
-
-
+    
     /**
-   * @name push
-   * @function
-   *
-   * @param {Array} array input array
-   * @param {Array|Object|Number} elements elements to push to the array
-   *
-   * @description pushes elements to the array
-   *
-   * @return {Array} The augmented array
-   *
+       * @name values
+       * @function
+       *
+       * @param {Array|Object} array the input array
+       * @description Unshift the input array
+       * @return {Array} The unshifted array
+       *
     */
 
-    const push = (array = [], ...elements) => {
-        if (Object.prototype.toString.call(array) !== '[object Array]') return array;
-        for (let i = 0; i < length(elements); i++) array[length(array)] = elements[i];
+    const unshift = (array = []) => {
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        const originalLength = length(array);
+        const newLength = originalLength + length(items);
 
-        return length(array);
+        for (let i = newLength - 1; i >= length(items); i--) array[i] = array[i - length(items)];
+        for (let i = 0; i < length(items); i++) array[i] = items[i];
+        
+        return newLength;
     }
 
 
@@ -60,12 +59,12 @@ const length = require('../length');
     |
     | The module is exported using an if/else statement. If the module object is defined and
     | has an exports property, then the module is being used in Node.js and we export 
-    | the push object by assigning it to module.exports
+    | the unshift object by assigning it to module.exports
     |
     |
     */
     
-    if (typeof module !== 'undefined' && module.exports)  module.exports = push;
+    if (typeof module !== 'undefined' && module.exports)  module.exports = unshift;
 
     /*
     |----------------------------------------------------------------------------------------
@@ -74,9 +73,9 @@ const length = require('../length');
     |
     | If module is not defined or does not have an exports property, then the module is being used
     | in the browser and we attach the myModule object to the global object (which is the window object
-    | in the browser) by assigning it to global.push.
+    | in the browser) by assigning it to global.unshift.
     |
     */
 
-    else global.push = push;
+    else global.unshift = unshift;
 })(this)

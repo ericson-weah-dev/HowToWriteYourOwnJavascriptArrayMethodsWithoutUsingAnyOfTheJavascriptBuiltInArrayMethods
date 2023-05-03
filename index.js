@@ -217,11 +217,9 @@
        *
     */
     exports.entries = (array = [], result = []) => {
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
-        for (let i = 0; i < length(array); i++) {
-            push(result, [i, array[i]]);
-            //if(Object.prototype.toString.call(array[i]) === '[object Array]') entries(array[i], result);
-        }
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        for (let i = 0; i < length(array); i++) push(result, [i, array[i]]);
+          
         return result;
     }
 
@@ -266,11 +264,8 @@
     */
 
     exports.fill = (array = [], value = 0, start = 0, end = length(array)) => {
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
-        for (let i = start; i < end; i++) {
-            array[i] = value;
-            if (Object.prototype.toString.call(array[i]) === '[object Array]') fill(array[i], value, start, end);
-        }
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        for (let i = start; i < end; i++) array[i] = value;
         return array;
     }
 
@@ -292,7 +287,6 @@
         if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
         for (let i = 0; i < length(array); i++) {
             if (fn(array[i], i, array)) return array[i];
-            if (Object.prototype.toString.call(array[i]) === '[object Array]') find(array[i], fn);
         }
         return undefined;
     }
@@ -316,7 +310,6 @@
         if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
         for (let i = 0; i < length(array); i++) {
             if (fn(array[i], i, array)) return i;
-            if (Object.prototype.toString.call(array[i]) === '[object Array]') findIndex(array[i], fn);
         }
         return -1;
     }
@@ -367,7 +360,7 @@
         if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
         for (let i = 0; i < length(array); i++) {
             if (fn(array[i], i, array)) push(result, array[i]);
-            if (Object.prototype.toString.call(array[i]) === '[object Array]') filter(array[i], fn, result)
+            ///if (Object.prototype.toString.call(array[i]) === '[object Array]') filter(array[i], fn, result)
         }
         return result;
     }
@@ -388,12 +381,10 @@
        *
     */
     exports.forEach = (array = [], fn = () => { }) => {
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
-        for (let i = 0; i < length(array); i++) {
-            fn(array[i], i, array);
-        }
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        for (let i = 0; i < length(array); i++) fn(array[i], i, array);
+        
     }
-
 
 
 
@@ -438,7 +429,7 @@
        *
     */
     exports.indexOf = (array = [], searchElement = '', fromIndex = 0, len = length(array)) => {
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
         let startIndex = fromIndex || 0;
         if (startIndex < 0) startIndex = len + startIndex;
 
@@ -521,7 +512,7 @@
 
     exports.lastIndexOf = (array = [], searchElement, fromIndex, len = length(array)) => {
 
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
 
         let startIndex = fromIndex || len - 1;
 
@@ -550,10 +541,10 @@
     */
 
     exports.map = (array = [], fn = () => { }, result = []) => {
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
         for (let i = 0; i < length(array); i++) {
             if (fn(array[i], i, array)) push(result, fn(array[i], i, array))
-            if (Object.prototype.toString.call(array[i]) === '[object Array]') map(array[i], fn, result)
+            // if (Object.prototype.toString.call(array[i]) === '[object Array]') map(array[i], fn, result)
         }
         return result;
     }
@@ -604,7 +595,7 @@
 
     exports.reduceRight = (array = [], fn = () => { }, initialValue, len = length(array)) => {
 
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
 
         let accumulator = initialValue === undefined ? array[len - 1] : initialValue;
         let startIndex = initialValue === undefined ? len - 2 : len - 1;
@@ -632,14 +623,14 @@
        *
     */
     exports.reverse = (array = [], len = length(array)) => {
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
 
         const mid = Math.floor(len / 2);
         for (let i = 0; i < mid; i++) {
             const temp = array[i];
             array[i] = array[len - 1 - i];
             array[len - 1 - i] = temp;
-            if (Object.prototype.toString.call(array[i]) === '[object Array]') reverse(array[i], len);
+            //if (Object.prototype.toString.call(array[i]) === '[object Array]') reverse(array[i], len);
         }
 
         return array;
@@ -661,7 +652,7 @@
   */
 
     exports.shift = (array = [], len = length(array), firstElement = array[0]) => {
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
         if (len === 0) return undefined;
         for (let i = 1; i < len; i++) {
             array[i - 1] = array[i];
@@ -685,16 +676,13 @@
      *
   */
     exports.slice = (array = [], len = length(array), result = []) => {
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
 
         const startIndex = start === undefined ? 0 : start < 0 ? len + start : start;
         const endIndex = end === undefined ? len : end < 0 ? len + end : end;
 
-        for (let i = startIndex; i < endIndex; i++) {
-            push(result, arr[i]);
-            if (Object.prototype.toString.call(array[i]) === '[object Array]') slice(array[i], len, result);
-        }
-
+        for (let i = startIndex; i < endIndex; i++) push(result, arr[i]);
+          
         return result;
     }
 
@@ -715,7 +703,7 @@
   */
 
     exports.some = (array = [], fn = () => { }) => {
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
         for (let i = 0; i < length(array); i++) {
             if (fn(array[i], i, array)) return true;
             if (Object.prototype.toString.call(array[i]) === '[object Array]') some(array[i], fn);
@@ -741,7 +729,7 @@
 
     exports.sort = (array = [], fn = () => { }) => {
         // check if array is an array and callback is a function
-        if (Object.prototype.toString.call(arg) !== '[object Array]' || typeof fn !== 'function') return undefined;
+        if (Object.prototype.toString.call(array) !== '[object Array]' || typeof fn !== 'function') return undefined;
 
         // quicksort implementation
         const quickSort = (qArray = [], left = 0, right = length(qArray) - 1) => {
@@ -799,7 +787,7 @@
 
     exports.splice = (array = [], start = 0, deleteCount = 0, ...items) => {
 
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
 
         const len = length(array);
         const startIndex = start < 0 ? len + start : start;
@@ -860,7 +848,7 @@
   */
     exports.toLocalString = (array = [], len = length(array), stringArray = [], separator = new Intl.NumberFormat().format(1.1).charAt(1)) => {
 
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
 
         for (let i = 0; i < len; i++) {
             if (array[i] === null || array[i] === undefined) {
@@ -875,7 +863,7 @@
 
 
     /**
-       * @name values
+       * @name unshift
        * @function
        *
        * @param {Array|Object} array the input array
@@ -885,7 +873,7 @@
     */
 
     exports.unshift = (array = []) => {
-        if (Object.prototype.toString.call(arg) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
         const originalLength = length(array);
         const newLength = originalLength + length(items);
 

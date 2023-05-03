@@ -1,6 +1,5 @@
 'use strict';
 const length = require('../length');
-
 /*
 |------------------------------------------------------------------------------------
 | Universal Module Definition (UMD)
@@ -29,26 +28,34 @@ const length = require('../length');
 
     |
     */
-
-
     /**
-   * @name push
-   * @function
-   *
-   * @param {Array} array input array
-   * @param {Array|Object|Number} elements elements to push to the array
-   *
-   * @description pushes elements to the array
-   *
-   * @return {Array} The augmented array
-   *
+       * @name reduceRight
+       * @function
+       *
+       * @param {Array|Object} array the array to filter
+       * @param {Function|Object} fn  A function to execute for each element in the array.
+       *   It should return a truthy value to keep the element in the resulting array, and a falsy value otherwise.
+       * @param {Array|Object|Number|String} initialValue  The initial value
+       *
+       * @description right reduces an array
+       *
+       * @return {Array|Object|Number|String} The result
+       *
     */
 
-    const push = (array = [], ...elements) => {
-        if (Object.prototype.toString.call(array) !== '[object Array]') return array;
-        for (let i = 0; i < length(elements); i++) array[length(array)] = elements[i];
+    const reduceRight = (array = [], fn = () => { }, initialValue, len = length(array)) => {
 
-        return length(array);
+        if (Object.prototype.toString.call(array) !== '[object Array]') throw new TypeError(`${array} must be an array`);
+
+        let accumulator = initialValue === undefined ? array[len - 1] : initialValue;
+        let startIndex = initialValue === undefined ? len - 2 : len - 1;
+
+        if (len === 0 && initialValue === undefined) throw new TypeError('Reduce of empty array with no initial value');
+
+        for (let i = startIndex; i >= 0; i--) {
+            accumulator = fn(accumulator, array[i], i, array);
+        }
+        return accumulator;
     }
 
 
@@ -60,12 +67,12 @@ const length = require('../length');
     |
     | The module is exported using an if/else statement. If the module object is defined and
     | has an exports property, then the module is being used in Node.js and we export 
-    | the push object by assigning it to module.exports
+    | the reduceRight object by assigning it to module.exports
     |
     |
     */
     
-    if (typeof module !== 'undefined' && module.exports)  module.exports = push;
+    if (typeof module !== 'undefined' && module.exports)  module.exports = reduceRight;
 
     /*
     |----------------------------------------------------------------------------------------
@@ -74,9 +81,9 @@ const length = require('../length');
     |
     | If module is not defined or does not have an exports property, then the module is being used
     | in the browser and we attach the myModule object to the global object (which is the window object
-    | in the browser) by assigning it to global.push.
+    | in the browser) by assigning it to global.reduceRight.
     |
     */
 
-    else global.push = push;
+    else global.reduceRight = reduceRight;
 })(this)

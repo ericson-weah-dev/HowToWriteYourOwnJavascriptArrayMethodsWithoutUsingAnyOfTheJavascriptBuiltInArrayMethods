@@ -1695,7 +1695,7 @@ The unshift function can be useful when you want to add elements to the beginnin
 
 # Bonus: Using Some Functional Programming Tricks
 
-Let's create ademethodizefunction that will allow us to create any of the functions we already created effortlessly. Here is an implementation of ourdemthodize function: 
+Let's create a demethodize function that will allow us to create any of the functions we already created effortlessly. Here is an implementation of our demthodize function: 
 
 
 ```javascript
@@ -1707,7 +1707,7 @@ Let's create ademethodizefunction that will allow us to create any of the functi
    *
    * @description plucks off a method from ANY object and makes that method a completely independent standalone reusable  function.
    *
-   *  For instance, if I wanted to make Array.prototype.map method an independent standalone reusable function, I would do something like this: const myArrayMap = pluckOff(Array.prototype.map). Then I would use it like this:
+   *  For instance, if I wanted to make Array.prototype.map method an independent standalone reusable function, I *  would do something like this: const myArrayMap = pluckOff(Array.prototype.map). Then I would use it like *   this:
    *
    * const array = [1,2,3,4,5]; const result = myArrayMap(array, x => x * 2); result = [2,4,6,8,10]
    *
